@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   webapp:
   - apiVersion: v2
+    appVersion: 1.2.4
+    created: "2023-12-16T04:47:15.479047+05:30"
+    description: A Helm chart for webapp
+    digest: be72ddf90b2ef84e43cd6fcbdd4f28bea0022b834804720356e983c98379f4b3
+    name: webapp
+    type: application
+    urls:
+    - charts/webapp-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 1.2.3
-    created: "2023-12-16T04:27:46.838213+05:30"
+    created: "2023-12-16T04:47:15.478188+05:30"
     description: A Helm chart for webapp
     digest: 7f3cd6d16c0935012eb40fe4698e3d88598e73129f45fd4717c65736b4a3ef47
     name: webapp
@@ -13,7 +23,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: "1.2"
-    created: "2023-12-16T04:27:46.837831+05:30"
+    created: "2023-12-16T04:47:15.477682+05:30"
     description: A Helm chart for webapp
     digest: d31cff5a9fc3a0d2285064f6489146a510a7f14df56fbfd1878702021b4976b3
     name: webapp
@@ -21,4 +31,4 @@ entries:
     urls:
     - charts/webapp-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-16T04:27:46.83668+05:30"
+generated: "2023-12-16T04:47:15.476536+05:30"
