@@ -1,0 +1,41 @@
+{{- with .Values.deploy }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .name }}
+  namespace: {{ .namespace }}
+  labels:
+    name: {{ .name }}
+    app: {{ .app }}
+spec:
+  replicas: {{ .replicas }}
+  selector:
+    matchLabels:
+      name: {{ .podName }}
+      app: {{ .app }}
+  minReadySeconds: {{ .minReadySeconds }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: {{ .maxSurge }}
+      maxUnavailable: {{ .maxUnavailable }}
+  template:
+    metadata:
+      name: {{ .podName }}
+      labels:
+        name: {{ .podName }}
+        app: {{ .app }}
+    spec:
+      containers:
+        - name: {{ .containerName }}
+          image: {{ .containerImage }}
+          ports:
+            - containerPort: {{ .containerPort }}
+          readinessProbe:
+            httpGet:
+              path: {{ .readinessProbePath }}
+              port: {{ .readinessProbePort }}
+            initialDelaySeconds: {{ .readinessProbeInitialDelaySeconds }}
+            periodSeconds: {{ .readinessProbePeriodSeconds }}
+            successThreshold: {{ .readinessProbeSuccessThreshold }}
+{{- end }}

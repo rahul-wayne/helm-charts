@@ -1,0 +1,26 @@
+deploy:
+  name: webapp-deployment
+  namespace: webapp
+  app: webapp
+  replicas: 5
+  podName: webapp-pod
+  minReadySeconds: 5
+  maxSurge: 1
+  maxUnavailable: 1
+  containerName: webapp
+  containerImage: blackpearl001/webapp:v1.2.2
+  containerPort: 80
+  readinessProbePath: /
+  readinessProbePort: 80
+  readinessProbeInitialDelaySeconds: 5
+  readinessProbePeriodSeconds: 5
+  readinessProbeSuccessThreshold: 1
+
+service:
+  name: webapp-service
+  namespace: webapp
+  podName: webapp-pod
+  app: webapp
+  port: 80
+  targetPort: 80
+  type: LoadBalancer
