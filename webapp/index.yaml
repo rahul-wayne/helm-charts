@@ -21,14 +21,4 @@ entries:
     urls:
     - charts/webapp-0.1.1.tgz
     version: 0.1.1
-  - apiVersion: v2
-    appVersion: "1.2"
-    created: "2023-12-16T04:47:15.477682+05:30"
-    description: A Helm chart for webapp
-    digest: d31cff5a9fc3a0d2285064f6489146a510a7f14df56fbfd1878702021b4976b3
-    name: webapp
-    type: application
-    urls:
-    - charts/webapp-0.1.0.tgz
-    version: 0.1.0
 generated: "2023-12-16T04:47:15.476536+05:30"
